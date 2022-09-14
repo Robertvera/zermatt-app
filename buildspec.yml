@@ -15,8 +15,8 @@ phases:
       #- apt install --no-install-recommends yarn
 
       # install npm
-      - echo Installing npm...
-      - apt install -y npm
+      #- echo Installing npm...
+      #- apt install -y npm
 
   pre_build:
     commands:
