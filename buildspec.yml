@@ -2,6 +2,8 @@ version: 0.2
 
 phases:
   install:
+   runtime-versions:
+       nodejs: 14
     commands:
       # install Node 14
       - echo Installing Node 14...
