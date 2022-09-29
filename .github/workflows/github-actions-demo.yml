@@ -6,13 +6,12 @@ on:
     branches:
       - main
 jobs:
-  build:
+  bump-version:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: remorses/bump-version@js
         with:
           version_file: ./VERSION
-          check-latest: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
