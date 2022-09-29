@@ -12,7 +12,7 @@ export default function Home({ investments }: User) {
 }
 
 export const getServerSideProps: GetServerSideProps<User> = async (context) => {
-  console.log('FETCHING DATA... ⏰🔥')
+  console.log('FETCHING DATA... 🔥')
   
   return {
     props: FAKE_USER_DATA
