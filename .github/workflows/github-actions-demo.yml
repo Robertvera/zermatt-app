@@ -1,12 +1,18 @@
-  name: Bump version
-  uses: remorses/bump-version@js
-  on:
-    pull_request:
-      types:
+name: Bump version
+on:
+  pull_request:
+    types:
       - closed
-      branches:
+    branches:
       - main
-  with:
-      version_file: ./VERSION
-  env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+    bump-version:
+        steps:
+          - uses: remorses/bump-version@js
+            with:
+              version_file: ./VERSION
+              check-latest: true
+            env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          - run: npm install
+          - run: npm check-rules
