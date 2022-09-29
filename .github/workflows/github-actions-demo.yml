@@ -6,13 +6,12 @@ on:
     branches:
       - main
 jobs:
-    bump-version:
-        steps:
-          - uses: remorses/bump-version@js
-            with:
-              version_file: ./VERSION
-              check-latest: true
-            env:
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          - run: npm install
-          - run: npm check-rules
+  bump-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: remorses/bump-version@js
+        with:
+          version_file: ./VERSION
+          check-latest: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
