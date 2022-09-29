@@ -1,0 +1,80 @@
+# type User {
+#     name: String!
+#     surname: String
+#     investments: Investments!
+# }
+
+# type Investments {
+#     funds: [Fund!] @relation
+#     user: User!
+# }
+
+
+# type Fund {
+#     isin: String!
+#     product: String!
+#     currency: String!
+#     investedK: Float!
+#     dayPrice: Float!
+#     buyOrders: [BuyOrder] @relation
+#     sellOrders: [SellOrder] @relation
+#     priceHistory: [DayPrice] @relation
+#     dayProfit: Float!
+#     profitHistory: [DayProfit] @relation
+#     investments: Investments!
+# }
+
+# type DayPrice {
+#     date: String!
+#     price: Float!
+#     fund: Fund!
+# }
+
+# type DayProfit {
+#     date: String!
+#     profit: Float!
+#     fund: Fund!
+# }
+
+# type BuyOrder {
+#     date: String!
+#     investedK: Float!
+#     price: Float!
+#     fund: Fund!
+# }
+
+# type SellOrder {
+#     date: String!
+#     investedK: Float!
+#     price: Float!
+#     fund: Fund!
+# }
+
+# type User {
+#     name: String!
+#     surname: String
+#     investments: Investments!
+# }
+
+# type Investments {
+#     funds: [Fund!] @relation
+#     user: User!
+# }
+
+# type Fund {
+#     isin: String!
+#     product: String!
+#     investments: Investments!
+# }
+
+type User {
+    name: String!
+    surname: String!
+    funds: [Fund!] @relation
+}
+
+type Fund {
+    isin: String!
+    product: String!
+    user: User!
+}
