@@ -1,0 +1,14 @@
+name: Hello world
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:    
+    - uses: Robertvera/simple-action@v1.2.0
